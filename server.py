@@ -2,7 +2,6 @@ from flask import Flask, Response, request
 import pymongo
 import json
 from bson.objectid import ObjectId
-
 app  = Flask(__name__)
 try:
     mongo = pymongo.MongoClient(host = 'localhost', port = 27017, serverSelectionTimeoutMS = 1000)
@@ -10,7 +9,6 @@ try:
     db = mongo.company
 except:
     print("Cannot connect to db")
-
 @app.route('/users', methods = ['GET'])
 def get_user():
     try:
